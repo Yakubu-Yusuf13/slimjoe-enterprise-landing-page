@@ -1,4 +1,4 @@
-document.querySelectorAll(".faq-question").forEach((question) => {
+document.querySelectorAll(".faq__question").forEach((question) => {
   question.addEventListener("click", () => {
     const isExpanded = question.getAttribute("aria-expanded") === "true";
     const answer = document.getElementById(question.getAttribute("aria-controls"));
@@ -8,25 +8,25 @@ document.querySelectorAll(".faq-question").forEach((question) => {
   });
 });
 
-const menuToggle = document.querySelector(".menu-toggle");
-const primaryNav = document.querySelector(".primary-nav");
+const menuToggle = document.querySelector(".site-header__toggle");
+const primaryNav = document.querySelector(".site-header__nav");
 
 menuToggle.addEventListener("click", () => {
   const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
   menuToggle.setAttribute("aria-expanded", String(!isExpanded));
-  primaryNav.classList.toggle("is-open", !isExpanded);
+  primaryNav.classList.toggle("site-header__nav--open", !isExpanded);
 });
 
 primaryNav.querySelectorAll("a").forEach((link) => {
   link.addEventListener("click", () => {
     menuToggle.setAttribute("aria-expanded", "false");
-    primaryNav.classList.remove("is-open");
+    primaryNav.classList.remove("site-header__nav--open");
   });
 });
 
 const planSelect = document.querySelector("#plan");
 
-document.querySelectorAll(".plan-cta").forEach((button) => {
+document.querySelectorAll(".pricing__cta").forEach((button) => {
   button.addEventListener("click", () => {
     planSelect.value = button.dataset.plan;
   });
