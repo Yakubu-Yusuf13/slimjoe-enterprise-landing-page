@@ -8,7 +8,7 @@ const init = () => {
   initPricingToggle();
   initHeaderShadow();
   initFooterYear();
-  initEnquiryForm();
+  initSignupForm();
 };
 
 /**
@@ -190,36 +190,137 @@ const initFooterYear = () => {
 };
 
 /**
- * Preserves the demo enquiry form and maps wholesale tiers to the form select.
+ * Validates the signup form, stores submissions, and maps wholesale tiers to the form select.
  * @returns {void}
  */
-const initEnquiryForm = () => {
+const initSignupForm = () => {
   const planSelect = document.querySelector("#plan");
   const signupForm = document.querySelector("#signup-form");
   const formMessage = document.querySelector("#form-message");
+  const fields = {
+    name: document.querySelector("#full-name"),
+    email: document.querySelector("#email"),
+    plan: planSelect,
+    terms: signupForm?.querySelector('[name="terms"]'),
+  };
 
   if (planSelect) {
     document.querySelectorAll(".pricing__cta").forEach((button) => {
       button.addEventListener("click", () => {
         planSelect.value = button.dataset.plan;
+        planSelect.dispatchEvent(new Event("change", { bubbles: true }));
       });
     });
   }
 
-  if (!signupForm || !formMessage) {
+  if (!signupForm || !formMessage || Object.values(fields).some((field) => !field)) {
     return;
   }
+
+  const errors = {
+    name: document.querySelector("#name-error"),
+    email: document.querySelector("#email-error"),
+    plan: document.querySelector("#plan-error"),
+    terms: document.querySelector("#terms-error"),
+  };
+
+  if (Object.values(errors).some((error) => !error)) {
+    return;
+  }
+
+  const getError = (fieldName) => {
+    const value = fields[fieldName].type === "checkbox"
+      ? fields[fieldName].checked
+      : fields[fieldName].value.trim();
+
+    if (fieldName === "name" && value.length < 2) {
+      return "Please enter at least 2 characters.";
+    }
+
+    if (fieldName === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+      return "Please enter a valid email address.";
+    }
+
+    if (fieldName === "plan" && !value) {
+      return "Please select an enquiry type.";
+    }
+
+    if (fieldName === "terms" && !value) {
+      return "Please agree to the terms and privacy policy.";
+    }
+
+    return "";
+  };
+
+  const validateField = (fieldName) => {
+    const errorMessage = getError(fieldName);
+    const field = fields[fieldName];
+    errors[fieldName].textContent = errorMessage;
+    field.setAttribute("aria-invalid", String(Boolean(errorMessage)));
+    return !errorMessage;
+  };
+
+  Object.keys(fields).forEach((fieldName) => {
+    const eventName = fieldName === "plan" || fieldName === "terms" ? "change" : "input";
+    fields[fieldName].addEventListener(eventName, () => {
+      formMessage.textContent = "";
+
+      if (errors[fieldName].textContent) {
+        validateField(fieldName);
+      }
+    });
+  });
 
   signupForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    if (!signupForm.reportValidity()) {
+    const isValid = Object.keys(fields).map(validateField).every(Boolean);
+    if (!isValid) {
+      formMessage.textContent = "";
       return;
     }
 
     const formData = new FormData(signupForm);
     const name = formData.get("name").trim();
-    formMessage.textContent = `Thanks, ${name}. Your enquiry is ready, but this demo form does not send or store submissions yet.`;
+    const email = formData.get("email").trim();
+    const plan = formData.get("plan");
+    let signups;
+
+    try {
+      const savedSignups = localStorage.getItem("signups");
+      signups = savedSignups ? JSON.parse(savedSignups) : [];
+    } catch (error) {
+      formMessage.textContent = "We couldn't access saved signups. Please check your browser storage settings and try again.";
+      return;
+    }
+
+    if (!Array.isArray(signups)) {
+      formMessage.textContent = "Saved signups could not be read. Please check your browser storage before trying again.";
+      return;
+    }
+
+    if (signups.some((signup) => (
+      signup && typeof signup.email === "string" && signup.email.trim().toLowerCase() === email.toLowerCase()
+    ))) {
+      formMessage.textContent = "You've already signed up";
+      return;
+    }
+
+    signups.push({ name, email, plan, createdAt: new Date().toISOString() });
+
+    try {
+      localStorage.setItem("signups", JSON.stringify(signups));
+    } catch (error) {
+      formMessage.textContent = "We couldn't save your signup. Please check your browser storage settings and try again.";
+      return;
+    }
+
+    signupForm.reset();
+    Object.keys(fields).forEach((fieldName) => {
+      errors[fieldName].textContent = "";
+      fields[fieldName].removeAttribute("aria-invalid");
+    });
+    formMessage.textContent = `Thanks, ${name}. Your signup has been saved.`;
   });
 };
 

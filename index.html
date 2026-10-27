@@ -34,11 +34,11 @@
     </header>
 
     <main>
-      <section class="hero section" id="home">
+      <section class="hero section" id="home" aria-labelledby="hero-heading">
         <div class="container hero__grid">
           <div class="hero__copy">
             <p class="eyebrow"><span class="eyebrow__dot"></span> Printed recharge cards, supplied wholesale</p>
-            <h1>Stock up.<br>Sell with <span class="text-accent">confidence.</span></h1>
+            <h1 id="hero-heading">Stock up.<br>Sell with <span class="text-accent">confidence.</span></h1>
             <p class="hero__description">SLIMJOE ENTERPRISE prints recharge cards and sells them wholesale. Get in touch to discuss your stock needs and request a quote for your next order.</p>
             <div class="hero__actions">
               <a class="btn btn--primary" href="#get-started">Request a wholesale quote <span aria-hidden="true">↗</span></a>
@@ -83,18 +83,18 @@
         </div>
       </section>
 
-      <section class="trust-strip" aria-label="SLIMJOE ENTERPRISE wholesale services">
+      <aside class="trust-strip" aria-label="SLIMJOE ENTERPRISE wholesale services">
         <div class="container trust-strip__inner">
           <p>SLIMJOE ENTERPRISE</p>
           <span>RECHARGE CARD PRINTING</span><span class="trust-strip__accent">Wholesale supply</span><span>MADE FOR RESELLERS</span><span class="trust-strip__accent">Order enquiries welcome</span>
         </div>
-      </section>
+      </aside>
 
-      <section class="section features section" id="features">
+      <section class="section features" id="features" aria-labelledby="features-heading">
         <div class="container">
           <div class="section-heading section-heading--centered">
             <p class="eyebrow">Wholesale made straightforward</p>
-            <h2>Recharge cards for <span class="text-accent">resale.</span></h2>
+            <h2 id="features-heading">Recharge cards for <span class="text-accent">resale.</span></h2>
             <p>Get the information you need to plan your next wholesale order.</p>
           </div>
           <div class="features__grid">
@@ -132,11 +132,11 @@
         </div>
       </section>
 
-      <section class="section pricing section" id="pricing">
+      <section class="section pricing" id="pricing" aria-labelledby="pricing-heading">
         <div class="container">
           <div class="section-heading section-heading--centered">
             <p class="eyebrow">Sample subscription plans</p>
-            <h2>Choose a plan that fits <span class="text-accent">your needs.</span></h2>
+            <h2 id="pricing-heading">Choose a plan that fits <span class="text-accent">your needs.</span></h2>
             <p>Illustrative pricing in Nigerian naira for design demonstration only. These are not SLIMJOE ENTERPRISE wholesale rates.</p>
           </div>
           <div class="pricing__billing" aria-label="Sample billing frequency">
@@ -150,7 +150,7 @@
           </div>
           <div class="pricing__grid" id="pricing-plans">
             <article class="pricing__card card">
-              <p class="pricing__name">Basic</p>
+              <h3 class="pricing__name">Basic</h3>
               <p class="pricing__description">A simple way to get started.</p>
               <p class="pricing__price"><span class="pricing__amount" data-monthly="₦0" data-yearly="₦0">₦0</span><span class="pricing__period">/ month</span></p>
               <p class="pricing__note">Free plan.</p>
@@ -160,7 +160,7 @@
             </article>
             <article class="pricing__card card pricing__card--featured">
               <span class="badge pricing__badge">Most popular</span>
-              <p class="pricing__name">Pro</p>
+              <h3 class="pricing__name">Pro</h3>
               <p class="pricing__description">For growing businesses.</p>
               <p class="pricing__price"><span class="pricing__amount" data-monthly="₦24,000" data-yearly="₦19,200">₦24,000</span><span class="pricing__period">/ month</span></p>
               <p class="pricing__note pricing__billing-note">Billed monthly.</p>
@@ -169,7 +169,7 @@
               <ul class="pricing__features"><li>Recharge card enquiry</li><li>Wholesale order discussion</li><li>Ask about availability</li><li>Request a quote</li></ul>
             </article>
             <article class="pricing__card card">
-              <p class="pricing__name">Business</p>
+              <h3 class="pricing__name">Business</h3>
               <p class="pricing__description">For teams with bigger needs.</p>
               <p class="pricing__price"><span class="pricing__amount" data-monthly="₦49,000" data-yearly="₦39,200">₦49,000</span><span class="pricing__period">/ month</span></p>
               <p class="pricing__note pricing__billing-note">Billed monthly.</p>
@@ -182,10 +182,10 @@
         </div>
       </section>
 
-      <section class="section stories section" id="stories">
+      <section class="section stories" id="stories" aria-labelledby="stories-heading">
         <div class="container">
           <div class="section-heading stories__heading">
-            <div><p class="eyebrow">Our approach</p><h2>Wholesale made<br><span class="text-accent">straightforward.</span></h2></div>
+            <div><p class="eyebrow">Our approach</p><h2 id="stories-heading">Wholesale made<br><span class="text-accent">straightforward.</span></h2></div>
             <p>Clear information to help you start your next order.</p>
           </div>
           <div class="stories__grid">
@@ -209,11 +209,11 @@
         </div>
       </section>
 
-      <section class="section faq section" id="faq">
+      <section class="section faq" id="faq" aria-labelledby="faq-heading">
         <div class="container faq__layout">
           <div class="faq__intro">
             <p class="eyebrow">A few good questions</p>
-            <h2>Need to know<br><span class="text-accent">more?</span></h2>
+            <h2 id="faq-heading">Need to know<br><span class="text-accent">more?</span></h2>
             <p>Send an enquiry and tell us what you’re looking for.</p>
             <a class="text-link" href="#get-started">Ask about an order <span aria-hidden="true">↗</span></a>
           </div>
@@ -242,31 +242,36 @@
         </div>
       </section>
 
-      <section class="signup" id="get-started">
+      <section class="signup" id="get-started" aria-labelledby="signup-heading">
         <div class="container signup__container">
           <div class="signup__copy">
             <p class="eyebrow eyebrow--light"><span class="eyebrow__dot"></span> Start a wholesale enquiry</p>
-            <h2>Let’s talk<br>about your <span class="text-accent">order.</span></h2>
+            <h2 id="signup-heading">Let’s talk<br>about your <span class="text-accent">order.</span></h2>
             <p>Tell us how to reach you and what kind of wholesale order you’re interested in.</p>
             <div class="signup__note"><span aria-hidden="true">✳</span> Pricing and availability confirmed on enquiry.</div>
           </div>
-          <form class="signup__form card" id="signup-form">
+          <form class="signup__form card" id="signup-form" novalidate>
             <h3>Request order information.</h3>
             <p class="signup__intro">Share your contact details and enquiry type.</p>
             <label for="full-name">Full name</label>
-            <input id="full-name" name="name" type="text" autocomplete="name" placeholder="Your name" required>
+            <input id="full-name" name="name" type="text" autocomplete="name" placeholder="Your name" aria-describedby="name-error" required>
+            <p class="signup__error" id="name-error"></p>
             <label for="email">Email address</label>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" aria-describedby="email-error" required>
+            <p class="signup__error" id="email-error"></p>
             <label for="plan">What are you enquiring about?</label>
-            <select id="plan" name="plan" required>
+            <select id="plan" name="plan" aria-describedby="plan-error" required>
+              <option value="" selected disabled>Select an enquiry type</option>
               <option value="basic">Basic wholesale enquiry</option>
-              <option value="pro" selected>Regular wholesale order</option>
+              <option value="pro">Regular wholesale order</option>
               <option value="business">Larger order enquiry</option>
             </select>
-            <label class="signup__terms"><input type="checkbox" name="terms" required><span>I agree to the <a href="#footer">Terms of Service</a> and <a href="#footer">Privacy Policy</a>.</span></label>
+            <p class="signup__error" id="plan-error"></p>
+            <label class="signup__terms"><input type="checkbox" name="terms" aria-describedby="terms-error" required><span>I agree to the <a href="#footer">Terms of Service</a> and <a href="#footer">Privacy Policy</a>.</span></label>
+            <p class="signup__error signup__error--terms" id="terms-error"></p>
             <button class="btn btn--primary signup__submit" type="submit">Send an enquiry <span aria-hidden="true">↗</span></button>
             <p class="signup__message" id="form-message" role="status" aria-live="polite"></p>
-            <p class="signup__privacy">Demo form only. Submissions are not sent or stored.</p>
+            <p class="signup__privacy">Demo form only. Submissions are stored in this browser and are not sent.</p>
           </form>
         </div>
       </section>
@@ -279,11 +284,11 @@
             <a class="wordmark" href="#home"><span class="wordmark__mark" aria-hidden="true">S</span><span class="wordmark__name">SLIMJOE <span>ENTERPRISE</span></span></a>
             <p>Recharge card printing<br>and wholesale supply.</p>
           </div>
-          <div class="site-footer__column"><h2>Explore</h2><a href="#features">Our service</a><a href="#pricing">Wholesale orders</a><a href="#stories">Our approach</a><a href="#faq">FAQ</a></div>
-          <div class="site-footer__column"><h2>Enquiries</h2><a href="#get-started">Request a quote</a><a href="#get-started">Discuss an order</a><a href="#faq">Order questions</a></div>
+          <nav class="site-footer__column" aria-label="Explore"><h2>Explore</h2><a href="#features">Our service</a><a href="#pricing">Wholesale orders</a><a href="#stories">Our approach</a><a href="#faq">FAQ</a></nav>
+          <nav class="site-footer__column" aria-label="Enquiries"><h2>Enquiries</h2><a href="#get-started">Request a quote</a><a href="#get-started">Discuss an order</a><a href="#faq">Order questions</a></nav>
           <div class="site-footer__signoff"><span aria-hidden="true">✳</span><p>Printed recharge cards<br>for wholesale resale.</p></div>
         </div>
-        <div class="site-footer__bottom"><p>© <span class="site-footer__year"></span> SLIMJOE ENTERPRISE.</p><div><a href="#footer">Privacy</a><a href="#footer">Terms</a><a href="#home">Back to top ↑</a></div></div>
+        <div class="site-footer__bottom"><p>© <span class="site-footer__year"></span> SLIMJOE ENTERPRISE.</p><nav aria-label="Legal and page links"><a href="#footer">Privacy</a><a href="#footer">Terms</a><a href="#home">Back to top ↑</a></nav></div>
       </div>
     </footer>
   </body>
