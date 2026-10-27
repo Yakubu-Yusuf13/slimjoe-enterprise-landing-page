@@ -361,6 +361,10 @@ h2 {
   gap: var(--space-4);
 }
 
+.hero__actions .btn {
+  border-radius: var(--radius-pill);
+}
+
 .text-link {
   display: inline-flex;
   min-height: 3.1rem;
