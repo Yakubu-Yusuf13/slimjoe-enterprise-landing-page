@@ -135,16 +135,25 @@
       <section class="section pricing section" id="pricing">
         <div class="container">
           <div class="section-heading section-heading--centered">
-            <p class="eyebrow">Wholesale orders</p>
-            <h2>Tell us what you <span class="text-accent">need.</span></h2>
-            <p>Pricing depends on your order. Get in touch to discuss availability and request a wholesale quote.</p>
+            <p class="eyebrow">Sample subscription plans</p>
+            <h2>Choose a plan that fits <span class="text-accent">your needs.</span></h2>
+            <p>Illustrative pricing in Nigerian naira for design demonstration only. These are not SLIMJOE ENTERPRISE wholesale rates.</p>
           </div>
-          <div class="pricing__grid">
+          <div class="pricing__billing" aria-label="Sample billing frequency">
+            <span>Monthly</span>
+            <button class="pricing__switch" type="button" role="switch" aria-checked="false" aria-label="Yearly billing">
+              <span class="visually-hidden">Toggle yearly billing</span>
+              <span class="pricing__switch-knob" aria-hidden="true"></span>
+            </button>
+            <span>Yearly</span>
+            <span class="badge pricing__savings" hidden>Save 20%</span>
+          </div>
+          <div class="pricing__grid" id="pricing-plans">
             <article class="pricing__card card">
               <p class="pricing__name">Basic</p>
-              <p class="pricing__description">For a first wholesale enquiry.</p>
-              <p class="pricing__price"><span class="pricing__amount">Quote</span></p>
-              <p class="pricing__note">Pricing based on your order.</p>
+              <p class="pricing__description">A simple way to get started.</p>
+              <p class="pricing__price"><span class="pricing__amount" data-monthly="₦0" data-yearly="₦0">₦0</span><span class="pricing__period">/ month</span></p>
+              <p class="pricing__note">Free plan.</p>
               <a class="btn btn--ghost pricing__cta" href="#get-started" data-plan="basic">Ask about an order</a>
               <p class="pricing__includes">Tell us what you’re looking for</p>
               <ul class="pricing__features"><li>Recharge card enquiry</li><li>Wholesale order discussion</li><li>Ask about availability</li><li>Request a quote</li></ul>
@@ -152,24 +161,24 @@
             <article class="pricing__card card pricing__card--featured">
               <span class="badge pricing__badge">Most popular</span>
               <p class="pricing__name">Pro</p>
-              <p class="pricing__description">For regular wholesale stock enquiries.</p>
-              <p class="pricing__price"><span class="pricing__amount">Quote</span></p>
-              <p class="pricing__note">Pricing based on your order.</p>
+              <p class="pricing__description">For growing businesses.</p>
+              <p class="pricing__price"><span class="pricing__amount" data-monthly="₦24,000" data-yearly="₦19,200">₦24,000</span><span class="pricing__period">/ month</span></p>
+              <p class="pricing__note pricing__billing-note">Billed monthly.</p>
               <a class="btn btn--primary pricing__cta" href="#get-started" data-plan="pro">Discuss your requirements</a>
               <p class="pricing__includes">Share your requirements</p>
               <ul class="pricing__features"><li>Recharge card enquiry</li><li>Wholesale order discussion</li><li>Ask about availability</li><li>Request a quote</li></ul>
             </article>
             <article class="pricing__card card">
               <p class="pricing__name">Business</p>
-              <p class="pricing__description">For larger wholesale order enquiries.</p>
-              <p class="pricing__price"><span class="pricing__amount">Quote</span></p>
-              <p class="pricing__note">Pricing based on your order.</p>
+              <p class="pricing__description">For teams with bigger needs.</p>
+              <p class="pricing__price"><span class="pricing__amount" data-monthly="₦49,000" data-yearly="₦39,200">₦49,000</span><span class="pricing__period">/ month</span></p>
+              <p class="pricing__note pricing__billing-note">Billed monthly.</p>
               <a class="btn btn--ghost pricing__cta" href="#get-started" data-plan="business">Talk through a bulk order</a>
               <p class="pricing__includes">Let’s discuss your order</p>
               <ul class="pricing__features"><li>Recharge card enquiry</li><li>Wholesale order discussion</li><li>Ask about availability</li><li>Request a quote</li></ul>
             </article>
           </div>
-          <p class="pricing__footnote">No prices are listed because wholesale quotes depend on your order. Contact us for details.</p>
+          <p class="pricing__footnote">Sample prices only—not actual SLIMJOE ENTERPRISE products, subscriptions, or wholesale rates. Contact us for a real wholesale quote.</p>
         </div>
       </section>
 
@@ -274,7 +283,7 @@
           <div class="site-footer__column"><h2>Enquiries</h2><a href="#get-started">Request a quote</a><a href="#get-started">Discuss an order</a><a href="#faq">Order questions</a></div>
           <div class="site-footer__signoff"><span aria-hidden="true">✳</span><p>Printed recharge cards<br>for wholesale resale.</p></div>
         </div>
-        <div class="site-footer__bottom"><p>© 2026 SLIMJOE ENTERPRISE.</p><div><a href="#footer">Privacy</a><a href="#footer">Terms</a><a href="#home">Back to top ↑</a></div></div>
+        <div class="site-footer__bottom"><p>© <span class="site-footer__year"></span> SLIMJOE ENTERPRISE.</p><div><a href="#footer">Privacy</a><a href="#footer">Terms</a><a href="#home">Back to top ↑</a></div></div>
       </div>
     </footer>
   </body>

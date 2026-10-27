@@ -218,6 +218,10 @@ h2 {
   backdrop-filter: blur(1rem);
 }
 
+.site-header--scrolled {
+  box-shadow: 0 0.6rem 1.5rem rgba(23, 36, 58, 0.1);
+}
+
 .site-header__inner {
   display: flex;
   min-height: 4.5rem;
@@ -859,6 +863,57 @@ h2 {
   gap: var(--space-4);
 }
 
+.pricing__billing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin: 0 auto var(--space-8);
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.pricing__switch {
+  position: relative;
+  width: 3rem;
+  height: 1.7rem;
+  padding: 0.2rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: #cbd6e4;
+  cursor: pointer;
+  transition: background-color 180ms ease;
+}
+
+.pricing__switch[aria-checked="true"] {
+  background: var(--color-brand);
+}
+
+.pricing__switch-knob {
+  display: block;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background: var(--color-surface);
+  box-shadow: 0 1px 3px rgba(23, 36, 58, 0.2);
+  transition: transform 180ms ease;
+}
+
+.pricing__switch[aria-checked="true"] .pricing__switch-knob {
+  transform: translateX(1.3rem);
+}
+
+.pricing__savings {
+  padding: 0.4rem 0.65rem;
+  background: #e2eee4;
+  color: #32623b;
+}
+
+.pricing__savings[hidden] {
+  display: none;
+}
+
 .pricing__card {
   position: relative;
   padding: var(--space-6);
@@ -905,6 +960,15 @@ h2 {
   font-size: 2rem;
   font-weight: 800;
   letter-spacing: -0.06em;
+}
+
+.pricing__period {
+  margin-left: var(--space-2);
+  color: var(--color-muted);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0;
 }
 
 .pricing__note {
@@ -1135,7 +1199,10 @@ h2 {
 }
 
 .faq__answer {
+  height: 0;
+  overflow: hidden;
   padding: 0 var(--space-8) var(--space-4) 0;
+  transition: height 260ms ease;
 }
 
 .faq__answer p {
